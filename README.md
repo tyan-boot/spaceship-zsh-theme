@@ -482,6 +482,7 @@ Shows Docker version and current connected machine name.
 | `SPACESHIP_VENV_SHOW` | `true` | Show current Python virtualenv or not |
 | `SPACESHIP_VENV_PREFIX` | `$SPACESHIP_PROMPT_DEFAULT_PREFIX` | Prefix before the virtualenv section |
 | `SPACESHIP_VENV_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after the virtualenv section |
+| `SPACESHIP_VENV_SYMBOL` | `🐍 ` | Character to be shown before virtualenv name |
 | `SPACESHIP_VENV_COLOR` | `blue` | Color of virtualenv environment section |
 
 ### Pyenv (`pyenv`)
