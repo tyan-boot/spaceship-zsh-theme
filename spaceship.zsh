@@ -222,6 +222,7 @@ SPACESHIP_DOCKER_COLOR="${SPACESHIP_DOCKER_COLOR:="cyan"}"
 SPACESHIP_VENV_SHOW="${SPACESHIP_VENV_SHOW:=true}"
 SPACESHIP_VENV_PREFIX="${SPACESHIP_VENV_PREFIX:="$SPACESHIP_PROMPT_DEFAULT_PREFIX"}"
 SPACESHIP_VENV_SUFFIX="${SPACESHIP_VENV_SUFFIX:="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
+SPACESHIP_VENV_SYMBOL="${SPACESHIP_VENV_SYMBOL:="🐍 "}"
 SPACESHIP_VENV_COLOR="${SPACESHIP_VENV_COLOR:="blue"}"
 
 # PYENV
@@ -873,10 +874,12 @@ spaceship_venv() {
   # Check if the current directory running via Virtualenv
   [ -n "$VIRTUAL_ENV" ] && _exists deactivate || return
 
+  local venv_version=$(python --version | sed 's/Python //')
+
   _prompt_section \
     "$SPACESHIP_VENV_COLOR" \
     "$SPACESHIP_VENV_PREFIX" \
-    "$(basename $VIRTUAL_ENV)" \
+    "${SPACESHIP_VENV_SYMBOL}${venv_version} $(basename $VIRTUAL_ENV)" \
     "$SPACESHIP_VENV_SUFFIX"
 }
 
